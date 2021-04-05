@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+.leftBlock{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 17px rgb(0 0 0 / 50%);
+}
+.block{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    background-image: url(./batman.png);
+    cursor: pointer;
+}   
+.rightBlock{
+    width: 402px;
+    height: 402px;
+    border: 1px solid black;
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 17px rgb(0 0 0 / 50%);
+}
+.reciever{
+    height: 100px;
+    width: 100px;
+}
+.time{
+    margin: auto;
+    width: 400px;
+    height: 100px;
+    font-size: 80px;
+    text-align: center;
+}
+.buttons{
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+}
+.button{
+    background-color: red;
+    height: 35px;
+    color: white;
+    width: 115px;
+    border-radius: 5px;
+    border: none;
+}
+.wrapperDark{
+    background-color: rgba(156, 154, 154, 0.205);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+}
+.wrapperLight{
+    z-index: -99;
+    padding: 42px;
+}
+.modal{
+    left: 0px;
+    top: 0px;
+    width: 700px;
+    height: 200px;
+    background-color: white;
+    margin: auto;
+    position: absolute;
+    top: 57px;
+    left: 200px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.text{
+    
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 59px;
+}
+.checkModal, .closeModal{
+    height: 35px;
+    width: 89px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    margin-top: 16px;
+}
+.closeModal{
+    background-color: red;
+}
+.checkModal{
+    background-color:green; 
+}
+.textTime{
+    display: flex;
+    width: 700px;
+    height: 66px;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    justify-content: center;
+}
+.small-time{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 59px;
+}
+.one{
+    background-position-y: 460px;
+    background-position-x: 437px;
+}
+.two{
+    background-position-y: 460px;
+    background-position-x: 338px;
+}
+.three{
+    background-position-y: 460px;
+    background-position-x: 250px;
+}
+.four{
+    background-position-y: 460px;
+    background-position-x: 147px;
+}
+.five{
+    background-position-y: 360px;
+    background-position-x: 440px;
+}
+.six{
+    background-position-y: 360px;
+    background-position-x: 341px;
+}
+.seven{
+    background-position-y: 360px;
+    background-position-x: 243px;
+}
+.eight{
+    background-position-y: 360px;
+    background-position-x: 144px;
+}
+.nine{
+    background-position-y: 275px;
+    background-position-x: 436px;
+}
+.ten{
+    background-position-y: 275px;
+    background-position-x: 338px;
+}
+.eleven{
+    background-position-y: 275px;
+    background-position-x: 248px;
+}
+.twelve{
+    background-position-y: 276px;
+    background-position-x: 148px;
+}
+.thirteen{
+    background-position-y: 180px;
+    background-position-x: 440px;
+}
+.fourteen{
+    background-position-y: 180px;
+    background-position-x: 342px;
+}
+.fifteen{
+    background-position-y: 180px;
+    background-position-x: 243px;
+}
+.sixteen{
+    background-position-y: 180px;
+    background-position-x: 146px;
+}
+.button:disabled{
+    background-color: rgb(228, 124, 124);
+}
+.hidden{
+display: none;
+}
