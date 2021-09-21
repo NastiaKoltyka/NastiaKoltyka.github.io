@@ -63,7 +63,10 @@ main.addEventListener('touchmove', function(e){
     let end = contact[0].pageY;
     let start = parseFloat(main.getAttribute('start'));
     let distance = end-start;
-    if (distance < -30) { // up
+    if (!active) {
+        return false
+    }
+    if (distance < -30) { 
         active = false;
         changePage();
         setTimeout(() => {
@@ -71,7 +74,7 @@ main.addEventListener('touchmove', function(e){
         }, 2000);
     } 
     
-    if (distance > 30) { // down
+    if (distance > 30) { 
         page = page - 1;
         main.style.top = `${-window.innerHeight*page}px`;
         active = false;
