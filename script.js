@@ -53,6 +53,33 @@ const scrollUp = () => {
             active = true;
         }, 2000);
 };
+document.addEventListener('touchstart', function(e){
+    let swipe = e.touches;
+    let start = swipe[0].pageY;
+    main.setAttribute('start', start);
+});
+document.addEventListener('touchmove', function(e){
+    let contact = e.touches;
+    let end = contact[0].pageY;
+    let start = parseFloat(msg.getAttribute('start'));
+    let distance = end-start;
+    if (distance < -30) { // up
+        active = false;
+        changePage();
+        setTimeout(() => {
+            active = true;
+        }, 2000);
+    } 
+    
+    if (distance > 30) { // down
+        page = page - 1;
+        main.style.top = `${-window.innerHeight*page}px`;
+        active = false;
+        setTimeout(() => {
+            active = true;
+        }, 2000);       
+    }
+});
 main.addEventListener("wheel", scroll);
 buttonDown.addEventListener("click", scrollDown);
 buttonUp.addEventListener("click", scrollUp);
