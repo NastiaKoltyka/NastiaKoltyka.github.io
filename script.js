@@ -66,7 +66,7 @@ main.addEventListener('touchmove', function(e){
     if (!active) {
         return false
     }
-    if (distance < -30) { 
+    if (distance < -30 && page < items - 1) {
         active = false;
         changePage();
         setTimeout(() => {
@@ -74,14 +74,14 @@ main.addEventListener('touchmove', function(e){
         }, 2000);
     } 
     
-    if (distance > 30) { 
+    if (distance > 30  && page > 0) { 
         page = page - 1;
         main.style.top = `${-window.innerHeight*page}px`;
         active = false;
         setTimeout(() => {
             active = true;
-        }, 2000);       
-    }
+        }, 2000);   
+    }    
 });
 main.addEventListener("wheel", scroll);
 buttonDown.addEventListener("click", scrollDown);
