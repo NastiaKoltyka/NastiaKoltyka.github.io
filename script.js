@@ -55,6 +55,6 @@ const scrollUp = () => {
 };
 main.addEventListener("wheel", scroll);
 main.addEventListener("touchstart", scroll);
-main.addEventListener("touchstart", scroll);
+main.addEventListener("onmousewheel", scroll);
 buttonDown.addEventListener("click", scrollDown);
 buttonUp.addEventListener("click", scrollUp);
