@@ -1,138 +1,58 @@
-$(function () {
-    let startedGame=false
-    let Time_counter
-    $('.block').draggable({
-        grid: [100, 100],
-        revert: 'invalid',
-        start:startGame
+let picture = document.querySelectorAll('.picture');
+let text = document.querySelectorAll('.text');
+const main = document.querySelector('.container');
+let items = document.querySelectorAll('.items').length;
+let buttonDown = document.querySelector('.btn');
+let buttonUp=document.querySelector('.btn-up');
+let page = 0;
+let active = true;
 
-    });
-    $(".reciever").droppable({
-        accept: function(item){
-            if(item.hasClass('block') && $(this).attr('block') == ''){
-                return true
-            }
-            return false
-        },
-        drop: function (event, ui) {
-            let result = $(ui.draggable).attr('block')
-            $(`.reciever[block='${result}']`).attr('block', '');
-            $(this).attr('block', result)
-        },
-        /* не працює, чому???????
-        out : function (event, ui) {
-            $(this).attr('block', '')
-        },*/
-    })
-    function random() {
-        let blocks = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
-        blocks.forEach((val, key) => {
-            randomIndex = Math.ceil(Math.random() * (key + 1));
-            blocks[key] =  blocks[randomIndex];
-            blocks[randomIndex] = val;
-        });
-       
-        for( let i=0;  i < blocks.length; i++){
-            $('.block').removeClass(blocks[i])
-            $('.block').eq(i).addClass(blocks[i])
-            $('.block').eq(i).attr('block',blocks[i])
-
-        }
-        
+const scroll = (event) => {
+    if (!active) {
+        return false
     }
-    random()
-    let check = true
-    $('.checkModal').on('click', function () {
-        clearInterval(Time_counter);
-        let blocks = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen']
-        for (let i = 0; i < blocks.length; i++) {
-            if ($('.reciever').eq(i).attr('block') != blocks[i]) {
-                check = false;
-                break
-
-            }
-        }
-        if (check) {
-            $('.text').text(`Woohoo, well done, you did it!`)
-            $('.checkModal').addClass('hidden')
-        }
-        else {
-            $('.text').text(`It's a pity, but you lost`)
-            $('.checkModal').addClass('hidden')
-        }
-        $('.check').attr("disabled", true)
-        $('.small-time').addClass('hidden')
-    })
-    function time(seconds) {
-        let minutes = `${parseInt(seconds / 60)}`
-        let s = `${parseInt(seconds % 60)}`
-        if (minutes.length == 1) {
-            minutes = `0${minutes}`
-        }
-        if (s.length == 1) {
-            s = `0${s}`
-        }
-        return (`${minutes}:${s}`)
-
+    if (event.deltaY > 0 && page < items - 1) {
+        active = false;
+        changePage();
+        setTimeout(() => {
+            active = true;
+        }, 2000);
+    } else if (event.deltaY < 0 && page > 0) {
+        page = page - 1;
+        main.style.top = `${-window.innerHeight*page}px`;
+        active = false;
+        setTimeout(() => {
+            active = true;
+        }, 2000);
     }
-    let count = 60;
-    function startGame() {
-        if(startedGame){
-            return
-        }
-        $('.check').attr("disabled", false)
-        startedGame=true
-        Time_counter = setInterval(timer, 1000);
-
-        function timer() {
-            count = count - 1;
-
-            if (count < 0) {
-                clearInterval(Time_counter);
-                $('.check').attr("disabled", true),
-                    $('.wrapperDark').removeClass('hidden')
-                $('.modal').css({
-                    display: 'flex',
-                    left: `${(window.innerWidth - 700) / 2}px`,
-                })
-                $('.text').text(`It's a pity, but you lost`)
-                $('.checkModal').addClass('hidden')
-                $('.small-time').addClass('hidden')
-                return
+};
+const scrollDown = () => {
+    changePage();
+};
+const changePage = () => {
+    if (page < items - 1) {
+        page = page + 1;
+        main.style.top = `${-window.innerHeight*page}px`;
+        setTimeout(() => {
+            if (page % 2) {
+                picture[page - 1].style.opacity = `1`;
+                text[page - 1].style.cssText = 'width:66%; opacity:1; right:0;';
+            } else {
+                picture[page - 1].style.opacity = `1`;
+                text[page - 1].style.cssText = 'width:66%; opacity:1; left:0;';
             }
-            $('.time').text(time(count))
-            $('.small-time').text(time(count))
-        }
-        $('.start').attr("disabled", true)
+        }, 1000);
     }
-    $('.start').on('click', startGame)
-    $('.closeModal').on('click', function () {
-        $('.wrapperDark').addClass('hidden')
-        $('.modal').addClass('hidden')
-    })
-    $('.check').on('click', function () {
-        $('.wrapperDark').removeClass('hidden')
-        $('.modal').css({
-            display: 'flex',
-            left: `${(window.innerWidth - 700) / 2}px`,
-        })
-        $('.text').text(`You still have time, you sure?`)
-        $('.checkModal').removeClass('hidden')
-        $('.small-time').removeClass('hidden')
-    })
-    
-    $('.newGame').on('click', function () {
-        $('.block').css({
-            top: '0px',
-            left: '0px'
-        })
-        random()
-        $('.start').attr("disabled", false)
-        count=60
-        $('.time').text(time(count))
-        $('.reciever').attr('block','') 
-        startedGame=false
 
-    })
-
-})
+}
+const scrollUp = () => {
+    page = 0;
+    main.style.top = `${-window.innerHeight*0}px`;
+        active = false;
+        setTimeout(() => {
+            active = true;
+        }, 2000);
+};
+main.addEventListener("wheel", scroll);
+buttonDown.addEventListener("click", scrollDown);
+buttonUp.addEventListener("click", scrollUp);

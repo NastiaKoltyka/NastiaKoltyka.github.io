@@ -1,188 +1,219 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.wrapper{
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 2s;
+}
+
+.container > div {
     display: flex;
-    justify-content: center;
-}
-.leftBlock{
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 0 17px rgb(0 0 0 / 50%);
-}
-.block{
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-    background-image: url(./batman.png);
-    cursor: pointer;
-}   
-.rightBlock{
-    width: 402px;
-    height: 402px;
-    border: 1px solid black;
-    margin-left: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 0 17px rgb(0 0 0 / 50%);
-}
-.reciever{
-    height: 100px;
-    width: 100px;
-}
-.time{
-    margin: auto;
-    width: 400px;
-    height: 100px;
-    font-size: 80px;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
-}
-.buttons{
-    width: 500px;
-    height: 50px;
-    margin: auto;
-    text-align: center;
-}
-.button{
-    background-color: red;
-    height: 35px;
-    color: white;
-    width: 115px;
-    border-radius: 5px;
-    border: none;
-}
-.wrapperDark{
-    background-color: rgba(156, 154, 154, 0.205);
     width: 100%;
     height: 100vh;
-    position: absolute;
-    top: 0px;
 }
-.wrapperLight{
-    z-index: -99;
-    padding: 42px;
+h1 {
+    font-size: 50px;
 }
-.modal{
-    left: 0px;
-    top: 0px;
-    width: 700px;
-    height: 200px;
-    background-color: white;
-    margin: auto;
-    position: absolute;
-    top: 57px;
-    left: 200px;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.text{
-    
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 59px;
-}
-.checkModal, .closeModal{
-    height: 35px;
-    width: 89px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    margin-right: 10px;
-    margin-top: 16px;
-}
-.closeModal{
-    background-color: red;
-}
-.checkModal{
-    background-color:green; 
-}
-.textTime{
+div#home {
+    background-image: url(pictures/peakpx.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
-    width: 700px;
-    height: 66px;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
     justify-content: center;
 }
-.small-time{
+#first-project {
+    justify-content: flex-start;
+}
+.picture {
+    width: 46%;
+    height: 60%;
+    background-image: url(pictures/kisspng-laptop-macbook-pro-macbook-air-apple-computer-screen-5acd2fc7940699.8851771815233965516063.png);
+    background-position: center;
+    margin-left: 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: 1;
+    transition: opacity, 0.3s;
+    border-radius: 5px;
+}
+
+.text {
+    height: 27%;
+    width: 30%;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: left, width, 2s;
+    overflow: hidden;
+}
+
+#second-project,
+#fourth-project,
+#sixth-project {
+    justify-content: flex-end;
+}
+.project-two-picture {
+    margin: 0px 70px 0px -87px;
+}
+.two-text-container {
+    background: linear-gradient(to right, #c0c0aa, #1cefff);
+    left: 30%;
+}
+.one-text-container {
+    background: linear-gradient(to right, #ef3b36, #ffffff);
+    right: 30%;
+}
+.three-text-container {
+    background: linear-gradient(to right, #108dc7, #ef8e38);
+    right: 30%;
+}
+.four-text-container {
+    background: linear-gradient(to right, #fffc00, #ffffff);
+    left: 30%;
+}
+.five-text-container {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    right: 30%;
+}
+.six-text-container {
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    left: 30%;
+}
+video {
+    position: relative;
+    top: 31px;
+}
+.btn, .btn-up {
+    width: 100px;
+    height: 50px;
+    border: none;
+    position: fixed;
+    top: calc(100vh - 70px);
+    left: calc(50vw - 25px);
+    font-size: 60px;
+    z-index: 1;
+    color: #d3d3d38c;
+    background-color: #f0f8ff00;
+    cursor: pointer;
+}
+.btn:hover, .btn-up:hover {
+    color: rgb(158, 156, 156);
+}
+.btn-up{
+    position: relative;
+    top: calc(50vh - 47px);
+    left: 0;
+}
+a{
+    color: black;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-top: 10px;
+}
+a:link {
     font-weight: bold;
-    font-size: 30px;
-    line-height: 59px;
 }
-.one{
-    background-position-y: 460px;
-    background-position-x: 437px;
+a:visited {
+    color: rgb(83, 81, 81);
 }
-.two{
-    background-position-y: 460px;
-    background-position-x: 338px;
+
+
+
+
+@media (max-width: 1200px) {
+    .text {
+        height: 20%;
+    }
+    video {
+        top: 20%;
+        height: 48%;
+    }
+    .five-text-container h1 {
+        width: 867px;
+    }
+    .six-text-container h1 {
+        width: 607px;
+        font-size: 43px;
+    }
 }
-.three{
-    background-position-y: 460px;
-    background-position-x: 250px;
+@media (max-width: 992px) {
+    .container > div {
+        justify-content: space-between;
+    }
+    .picture {
+        background-image: none;
+        position: static;
+        display: block;
+        width: 100vw;
+        height: 50vh;
+        margin: 0;
+    }
+    #first-project {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .text {
+        position: static;
+        width: 100vw !important;
+        opacity: 1;
+        right: 0px !important;
+        height: 32%;
+        transition: none;
+    }
+    video {
+        top: 0px;
+        height: 73vh;
+        width: 100%;
+    }
+    #second-project,
+    #fourth-project,
+    #sixth-project,
+    #third-project, #fiveth-project {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .btn {
+        left: calc(50vw - 54px);
+    }
+    .five-text-container h1 {
+        width: 100%;
+    }
+    .six-text-container h1 {
+        width: 100%;
+    }
+    
 }
-.four{
-    background-position-y: 460px;
-    background-position-x: 147px;
-}
-.five{
-    background-position-y: 360px;
-    background-position-x: 440px;
-}
-.six{
-    background-position-y: 360px;
-    background-position-x: 341px;
-}
-.seven{
-    background-position-y: 360px;
-    background-position-x: 243px;
-}
-.eight{
-    background-position-y: 360px;
-    background-position-x: 144px;
-}
-.nine{
-    background-position-y: 275px;
-    background-position-x: 436px;
-}
-.ten{
-    background-position-y: 275px;
-    background-position-x: 338px;
-}
-.eleven{
-    background-position-y: 275px;
-    background-position-x: 248px;
-}
-.twelve{
-    background-position-y: 276px;
-    background-position-x: 148px;
-}
-.thirteen{
-    background-position-y: 180px;
-    background-position-x: 440px;
-}
-.fourteen{
-    background-position-y: 180px;
-    background-position-x: 342px;
-}
-.fifteen{
-    background-position-y: 180px;
-    background-position-x: 243px;
-}
-.sixteen{
-    background-position-y: 180px;
-    background-position-x: 146px;
-}
-.button:disabled{
-    background-color: rgb(228, 124, 124);
-}
-.hidden{
-display: none;
+@media (max-width: 767) {
+    .btn {
+        left: calc(50vw - 54px);
+        top: calc(100vh - 48px);
+    }
 }

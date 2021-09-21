@@ -3,71 +3,91 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <div class="wrapperLight">
-        <div class="time">01:00</div>
-        <div class="buttons">
-            <button class="start button">Start Game!</button>
-            <button class="check button">Check result</button>
-            <button class="newGame button">New game</button>
+    <button class="btn"> <i class="fas fa-angle-down"></i></button>
+    <div class="container">
+        <div id="home" class="items"></div>
+        <div id="first-project" class="items">
+            <div class="project-one-picture picture">
+                <video width="72%" height="70%" poster="videos/video1.mp4"
+                autoplay muted loop class="video">
+                <source src="videos/video1.mp4" type='video/mp4'>
+            </video>
+            </div>
+            <div class="one-text-container text">
+                <h1>Logos</h1>
+                <a href="https://github.com/NastiaKoltyka/LOGOS-site.git" target="_blank">view now</a>
+            </div>
         </div>
-        <div class="wrapper">
-            <div class="leftBlock">
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
-                <div class="block" block=""></div>
+        <div id="second-project" class="items">
+            <div class="two-text-container text">
+                <h1>Dreamshare</h1>
+                <a href="https://github.com/NastiaKoltyka/Dreamshare.git" target="_blank">view now</a>
             </div>
-            <div class="rightBlock">
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=''></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
-                <div class="reciever" block=""></div>
+            <div  class="project-two-picture picture">
+                <video width="72%" height="70%" poster="videos/video2.mp4"
+                    autoplay muted loop class="video">
+                    <source src="videos/video2.mp4" type='video/mp4'>
+                </video>
             </div>
+        </div>
+        <div id="third-project" class="items">
+            <div class="three-text-container text">
+                <h1>Puzzle</h1>
+                <a href="https://github.com/NastiaKoltyka/puzzle.git" target="_blank">view now</a>
+            </div>
+            <div  class="project-one-picture picture">
+                <video width="72%" height="70%" poster="videos/video3.mp4"
+                    autoplay muted loop class="video">
+                    <source src="videos/video3.mp4" type='video/mp4'>
+                </video>
+            </div>
+        </div>
+        <div id="fourth-project" class="items">
+            <div class="four-text-container text">
+                <h1>Sunny travel</h1>
+                <a href="https://github.com/NastiaKoltyka/travel.git" target="_blank">view now</a>
+            </div>
+            <div  class="project-two-picture picture">
+                <video width="72%" height="70%" poster="videos/video4.mp4"
+                    autoplay muted loop class="video">
+                    <source src="videos/video4.mp4" type='video/mp4'>
+                </video>
+            </div>
+        </div>
+        <div id="fiveth-project" class="items">
+            <div class="five-text-container text">
+                <h1>User management</h1>
+                <a href="https://github.com/NastiaKoltyka/users-system.git" target="_blank">view now</a>
+            </div>
+            <div  class="project-one-picture picture">
+                <video width="71%" height="74%" poster="videos/video5.mp4"
+                    autoplay muted loop class="video">
+                    <source src="videos/video5.mp4" type='video/mp4'>
+                </video>
+            </div>
+        </div>
+        <div id="sixth-project" class="items">
+            <div class="six-text-container text">
+                <h1>Money management</h1>
+                <a href="https://github.com/NastiaKoltyka/money-managment.git" target="_blank">view now</a>
+            </div>
+            <div  class="project-two-picture picture">
+                <video width="72%" height="70%" poster="videos/video6.mp4"
+                    autoplay muted loop class="video">
+                    <source src="videos/video6.mp4" type='video/mp4'>
+                </video>
+            </div>
+            <button class="btn-up"> <i class="fas fa-angle-up"></i></button>
         </div>
     </div>
-    <div class="wrapperDark hidden">
-        <div class="modal hidden">
-            <div class="textTime"><p class="text">It's a pity, but you lost</p>
-            <p class="small-time hidden"></p></div>
-            <div class="modalButton">
-                <button class="closeModal">Close</button>
-                <button class="checkModal">Check</button>
-            </div>
-        </div>
-    </div>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="script.js"></script>
 </body>
 
