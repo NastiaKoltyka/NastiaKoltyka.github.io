@@ -61,7 +61,7 @@ main.addEventListener('touchstart', function(e){
 main.addEventListener('touchmove', function(e){
     let contact = e.touches;
     let end = contact[0].pageY;
-    let start = parseFloat(msg.getAttribute('start'));
+    let start = parseFloat(main.getAttribute('start'));
     let distance = end-start;
     if (distance < -30) { // up
         active = false;
