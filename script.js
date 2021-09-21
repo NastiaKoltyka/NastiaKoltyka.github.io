@@ -53,12 +53,12 @@ const scrollUp = () => {
             active = true;
         }, 2000);
 };
-document.addEventListener('touchstart', function(e){
+main.addEventListener('touchstart', function(e){
     let swipe = e.touches;
     let start = swipe[0].pageY;
     main.setAttribute('start', start);
 });
-document.addEventListener('touchmove', function(e){
+main.addEventListener('touchmove', function(e){
     let contact = e.touches;
     let end = contact[0].pageY;
     let start = parseFloat(msg.getAttribute('start'));
