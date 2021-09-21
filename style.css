@@ -196,7 +196,7 @@ a:visited {
         width: 100%;
     }
     h1{
-        font-size: 90px;
+        font-size: 80px;
     }
     a{
         font-size: 30px;
@@ -212,13 +212,16 @@ a:visited {
     .btn {
         left: calc(50vw - 54px);
     }
+    .two-text-container h1 {
+        font-size: 60px;
+    }
     .five-text-container h1 {
         width: 100%;
-        font-size: 90px;
+        font-size: 60px;
     }
     .six-text-container h1 {
         width: 100%;
-        font-size: 90px;
+        font-size: 60px;
     }    
     #second-project {
         background: linear-gradient(to right, #c0c0aa, #1cefff);
