@@ -70,6 +70,7 @@ div#home {
     opacity: 0;
     transition: left, width, 2s;
     overflow: hidden;
+    text-shadow: 4px 3px 6px rgb(0 0 0 / 46%);
 }
 
 #second-project,
@@ -184,13 +185,21 @@ a:visited {
         width: 100vw !important;
         opacity: 1;
         right: 0px !important;
-        height: 32%;
+        height: 100%;
         transition: none;
+        background: none;
+        justify-content: space-evenly;
     }
     video {
         top: 0px;
         height: 73vh;
         width: 100%;
+    }
+    h1{
+        font-size: 90px;
+    }
+    a{
+        font-size: 30px;
     }
     #second-project,
     #fourth-project,
@@ -205,9 +214,33 @@ a:visited {
     }
     .five-text-container h1 {
         width: 100%;
+        font-size: 90px;
     }
     .six-text-container h1 {
         width: 100%;
+        font-size: 90px;
+    }    
+    #second-project {
+        background: linear-gradient(to right, #c0c0aa, #1cefff);
+        left: 30%;
+    }
+    #fourth-project {
+        background: linear-gradient(to right, #ef3b36, #ffffff);
+    }
+    #third-project {
+        background: linear-gradient(to right, #108dc7, #ef8e38);
+    }
+    #fourth-project {
+        background: linear-gradient(to right, #fffc00, #ffffff);
+    }
+    #fiveth-project {
+        background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    }
+    #sixth-project {
+        background: linear-gradient(to right, #a8ff78, #78ffd6);
+    }
+    #first-project {
+        background: linear-gradient(to right, #ef3b36, #ffffff);
     }
     
 }
