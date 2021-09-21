@@ -54,5 +54,6 @@ const scrollUp = () => {
         }, 2000);
 };
 main.addEventListener("wheel", scroll);
+main.addEventListener("touchmove", scroll);
 buttonDown.addEventListener("click", scrollDown);
 buttonUp.addEventListener("click", scrollUp);
