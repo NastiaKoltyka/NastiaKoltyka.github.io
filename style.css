@@ -31,7 +31,9 @@ body {
 }
 h1 {
     font-size: 50px;
+    user-select: none;
 }
+
 div#home {
     background-image: url(pictures/peakpx.jpg);
     background-repeat: no-repeat;
@@ -122,6 +124,7 @@ video {
     color: #d3d3d38c;
     background-color: #f0f8ff00;
     cursor: pointer;
+    user-select:none;
 }
 .btn:hover,
 .btn-up:hover {
@@ -146,6 +149,27 @@ a:link {
 a:visited {
     color: rgb(83, 81, 81);
 }
+@media (max-width: 1750px) {
+    .text {
+        height: 18%;
+    }
+    video {
+        top: 6%;
+        width: 71%;
+        height: 73%;
+    }
+    .five-text-container h1 {
+        width: 867px;
+    }
+    .six-text-container h1 {
+        width: 78%;
+        font-size: 43px;
+    }
+    .six-text-container a {
+        width: 78%;
+    }
+
+}
 
 @media (max-width: 1200px) {
     .text {
@@ -159,8 +183,11 @@ a:visited {
         width: 867px;
     }
     .six-text-container h1 {
-        width: 607px;
+        width: 66%;
         font-size: 43px;
+    }
+    .six-text-container a{
+        width: 100%;
     }
 }
 @media (max-width: 992px) {
@@ -200,6 +227,7 @@ a:visited {
         font-size: 80px;
     }
     a {
+        width: 100%;
         font-size: 30px;
     }
     #second-project,
