@@ -21,6 +21,7 @@ const scroll = (event) => {
         page = page - 1;
         main.style.top = `${-window.innerHeight*page}px`;
         active = false;
+        buttonDown.style.display = "block";
         setTimeout(() => {
             active = true;
         }, 2000);
@@ -28,6 +29,9 @@ const scroll = (event) => {
 };
 const scrollDown = () => {
     changePage();
+    if(page==items-1){
+        buttonDown.style.display = "none";
+    }
 };
 const changePage = () => {
     if (page < items - 1) {
@@ -49,6 +53,7 @@ const scrollUp = () => {
     page = 0;
     main.style.top = `${-window.innerHeight*0}px`;
         active = false;
+        buttonDown.style.display = "block";
         setTimeout(() => {
             active = true;
         }, 2000);
@@ -78,6 +83,7 @@ main.addEventListener('touchmove', function(e){
         page = page - 1;
         main.style.top = `${-window.innerHeight*page}px`;
         active = false;
+        buttonDown.style.display = "block";
         setTimeout(() => {
             active = true;
         }, 2000);   
