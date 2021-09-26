@@ -1,4 +1,4 @@
-let picture = document.querySelectorAll('.picture');
+let picture = document.querySelectorAll('.part.top');
 let text = document.querySelectorAll('.text');
 const main = document.querySelector('.container');
 let items = document.querySelectorAll('.items').length;
@@ -37,12 +37,13 @@ const changePage = () => {
     if (page < items - 1) {
         page = page + 1;
         main.style.top = `${-window.innerHeight*page}px`;
+        console.log(picture)
         setTimeout(() => {
             if (page % 2) {
-                picture[page - 1].style.opacity = `1`;
+                picture[page - 1].classList.add("hover");
                 text[page - 1].style.cssText = 'width:66%; opacity:1; right:0;';
             } else {
-                picture[page - 1].style.opacity = `1`;
+                picture[page - 1].classList.add("hover");
                 text[page - 1].style.cssText = 'width:66%; opacity:1; left:0;';
             }
         }, 1000);
@@ -92,3 +93,17 @@ main.addEventListener('touchmove', function(e){
 main.addEventListener("wheel", scroll);
 buttonDown.addEventListener("click", scrollDown);
 buttonUp.addEventListener("click", scrollUp);
+
+let myIndex = 0;
+carousel();
+
+function carousel() {
+  let x = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
