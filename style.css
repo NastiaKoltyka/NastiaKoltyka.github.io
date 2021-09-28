@@ -242,15 +242,13 @@ h1 {
     user-select: none;
 }
 
+.btn-up{
+    display: none;
+}
+
 .btn:hover,
 .btn-up:hover {
     color: rgb(158, 156, 156);
-}
-
-.btn-up {
-    position: relative;
-    top: calc(25vh - 70px);
-    left: calc(50vh - 150px);
 }
 
 a {
@@ -315,9 +313,6 @@ a:visited {
     h1 {
         font-size: 50px;
     }
-    .btn-up {
-        top: 20vh;
-    }
     a {
         font-size: 15px;
     }
@@ -352,9 +347,6 @@ a:visited {
 
     .mockup {
         width: 550px;
-    }
-    .btn-up {
-        top: 22vh;
     }
     .project-two-picture {
         margin: 0px 104px 0px 0px;
@@ -435,7 +427,8 @@ a:visited {
         justify-content: space-between;
     }
 
-    .btn {
+    .btn,
+    .btn-up {
         left: calc(50vw - 54px);
     }
 
@@ -491,13 +484,9 @@ a:visited {
         width: 100%;
         height: 300px;
     }
-    .btn {
+    .btn, 
+    .btn-up {
         left: calc(50vw - 54px);
         top: calc(100vh - 48px);
-    }
-    .btn-up {
-        position: relative;
-        top: 100vh;
-        left: 21vh;
     }
 }
