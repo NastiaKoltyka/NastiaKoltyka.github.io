@@ -3,7 +3,7 @@ let text = document.querySelectorAll('.text');
 const main = document.querySelector('.container');
 let items = document.querySelectorAll('.items').length;
 let buttonDown = document.querySelector('.btn');
-let buttonUp=document.querySelector('.btn-up');
+let buttonUp = document.querySelector('.btn-up');
 let page = 0;
 let active = true;
 
@@ -14,7 +14,7 @@ const scroll = (event) => {
     if (event.deltaY > 0 && page < items - 1) {
         active = false;
         changePage();
-        if(page===items-1){
+        if (page === items - 1) {
             buttonDown.style.display = "none";
         }
         setTimeout(() => {
@@ -32,16 +32,16 @@ const scroll = (event) => {
     }
 };
 const scrollDown = () => {
-    if(page===items-1){
+    if (page === items - 1) {
         buttonDown.style.display = "none";
-        
+
     }
     changePage();
-    
+
 
 };
 const changePage = () => {
-    
+
     if (page < items - 1) {
         page = page + 1;
         main.style.top = `${-window.innerHeight*page}px`;
@@ -60,22 +60,22 @@ const changePage = () => {
 const scrollUp = () => {
     page = 0;
     main.style.top = `${-window.innerHeight*0}px`;
-        active = false;
-        buttonDown.style.display = "block";
-        setTimeout(() => {
-            active = true;
-        }, 2000);
+    active = false;
+    buttonDown.style.display = "block";
+    setTimeout(() => {
+        active = true;
+    }, 2000);
 };
-main.addEventListener('touchstart', function(e){
+main.addEventListener('touchstart', function (e) {
     let swipe = e.touches;
     let start = swipe[0].pageY;
     main.setAttribute('start', start);
 });
-main.addEventListener('touchmove', function(e){
+main.addEventListener('touchmove', function (e) {
     let contact = e.touches;
     let end = contact[0].pageY;
     let start = parseFloat(main.getAttribute('start'));
-    let distance = end-start;
+    let distance = end - start;
     if (!active) {
         return false
     }
@@ -85,32 +85,40 @@ main.addEventListener('touchmove', function(e){
         setTimeout(() => {
             active = true;
         }, 2000);
-    } 
-    
-    if (distance > 30  && page > 0) { 
+    }
+
+    if (distance > 30 && page > 0) {
         page = page - 1;
         main.style.top = `${-window.innerHeight*page}px`;
         active = false;
         buttonDown.style.display = "block";
         setTimeout(() => {
             active = true;
-        }, 2000);   
-    }    
+        }, 2000);
+    }
 });
 main.addEventListener("wheel", scroll);
 buttonDown.addEventListener("click", scrollDown);
 buttonUp.addEventListener("click", scrollUp);
 
-let myIndex = 0;
-carousel();
-
 function carousel() {
-  let x = document.getElementsByClassName("mySlides");
-  for (let i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 2000); // Change image every 2 seconds
+    let carousels = document.getElementsByClassName("carusel");
+    for (let item of carousels) {
+        let x = item.children;
+        for (let i = 1; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+
+        let myIndex = 0;
+        setInterval(()=> {
+            x[myIndex].style.display = "none";
+            myIndex++;
+            if(myIndex == x.length){
+                myIndex = 0;
+            }
+            x[myIndex].style.display = "block";
+        }, 2000);
+    }
 }
+
+carousel()
