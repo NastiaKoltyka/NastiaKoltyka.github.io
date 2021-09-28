@@ -14,6 +14,9 @@ const scroll = (event) => {
     if (event.deltaY > 0 && page < items - 1) {
         active = false;
         changePage();
+        if(page===items-1){
+            buttonDown.style.display = "none";
+        }
         setTimeout(() => {
             active = true;
         }, 2000);
@@ -25,19 +28,23 @@ const scroll = (event) => {
         setTimeout(() => {
             active = true;
         }, 2000);
+
     }
 };
 const scrollDown = () => {
-    changePage();
-    if(page==items-1){
+    if(page===items-1){
         buttonDown.style.display = "none";
+        
     }
+    changePage();
+    
+
 };
 const changePage = () => {
+    
     if (page < items - 1) {
         page = page + 1;
         main.style.top = `${-window.innerHeight*page}px`;
-        console.log(picture)
         setTimeout(() => {
             if (page % 2) {
                 picture[page - 1].classList.add("hover");

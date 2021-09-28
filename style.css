@@ -8,8 +8,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url(pictures/black-stone-background-4k-stone-textures-grunge-backgrounds-stone-wall.jpg); */
-    background-color: grey;
+    background-image: url(pictures/black-stone-background-4k-stone-textures-grunge-backgrounds-stone-wall.jpg);
+    /* background-color: grey;*/
     backdrop-filter: blur(1px);
     background-size: cover;
     color: #fff;
@@ -260,7 +260,7 @@ a {
     outline: none;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 20px;
     margin-top: 10px;
 }
 
@@ -320,13 +320,22 @@ a:visited {
     .btn-up {
         top: 25vh;
     }
+    a {
+        font-size: 15px;
+    }
+    #home a {
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) {
     .home-text {
         width: 40%;
-        font-size: 110px;
+        font-size: 72px;
         word-wrap: break-word;
+    }
+    #home span{
+        font-size: 72px;
     }
     .container > div {
         width: 100%;
@@ -348,7 +357,7 @@ a:visited {
     }
 
     .mockup img {
-        max-width: 65%;
+        max-width: 85%;
     }
     .btn-up {
         top: 22vh;
@@ -359,9 +368,37 @@ a:visited {
     /* .project-two-picture .container-laptop {
         width: 156%;
     } */
+    a {
+        font-size: 11px;
+    }
+    /* .picture{
+        margin: -196px;
+    } */
 }
 
 @media (max-width: 992px) {
+    #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .home-text {
+        width: 88%;
+        font-size: 89px;
+        word-wrap: break-word;
+    }
+    .home-text span{
+        font-size: 89px;
+    }
+    #home a {
+        display: block;
+        margin-bottom: calc(50% - 61px);
+        margin-left: calc(50vh - 94px);
+        font-size: 23px;
+    }
+    .qr-picture {
+        display: none;
+    }
     .container > div {
         justify-content: space-between;
     }
@@ -373,7 +410,7 @@ a:visited {
 
     .text {
         position: static;
-        padding-top: 0;
+        padding: 0px;
         color: rgb(191, 186, 186);
         width: 100vw !important;
         opacity: 1;
@@ -448,14 +485,29 @@ a:visited {
     .carusel img {
         width: 100%;
     }
+
 }
 
 @media (max-width: 767px) {
+    #home a {
+        margin-bottom: calc(50% - 61px);
+        margin-left: auto;
+    }
+    .home-text {
+        width: 88%;
+        font-size: 70px;
+        word-wrap: break-word;
+    }
+    .home-text span {
+        font-size: 70px;
+    }
     .btn {
         left: calc(50vw - 54px);
         top: calc(100vh - 48px);
     }
-
+    .home-text {
+        font-size: 70px;
+    }
     .btn-up {
         position: relative;
         top: 100vh;
