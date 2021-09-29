@@ -7,15 +7,6 @@ let buttonUp = document.querySelector('.btn-up');
 let page = 0;
 let active = true;
 
-const scrollingUp=()=>{
-    main.style.top = `${-window.innerHeight*0}px`;
-    active = false;
-    buttonDown.style.display = "block";
-    buttonUp.style.display = "none";
-    setTimeout(() => {
-        active = true;
-    }, 2000);
-}
 const scroll = (event) => {
     if (!active) {
         return false
@@ -28,7 +19,14 @@ const scroll = (event) => {
         }, 2000);
     } else if (event.deltaY < 0 && page > 0) {
         page = page - 1;
-        scrollingUp();
+        main.style.top = `${-window.innerHeight*page}px`;
+        active = false;
+        buttonDown.style.display = "block";
+        buttonUp.style.display = "none";
+        setTimeout(() => {
+            active = true;
+        }, 2000);
+
     }
 };
 const scrollDown = () => {
@@ -53,9 +51,17 @@ const changePage = () => {
         }
     }
 }
-
+const scrollingUp=()=>{
+    active = false;
+    buttonDown.style.display = "block";
+    buttonUp.style.display = "none";
+    setTimeout(() => {
+        active = true;
+    }, 2000);
+}
 const scrollUp = () => {
     page = 0;
+    main.style.top = `${-window.innerHeight*0}px`;
     scrollingUp();
 };
 main.addEventListener('touchstart', function (e) {
@@ -80,8 +86,9 @@ main.addEventListener('touchmove', function (e) {
     }
 
     if (distance > 30 && page > 0) {
-        page = page - 1;
+        main.style.top = `${-window.innerHeight*page}px`;
         scrollingUp();
+        page = page - 1;
     }
 });
 
